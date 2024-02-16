@@ -12,3 +12,14 @@ a {
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
+
+.ec-minicart__icon {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.ec-minicart--no-shape {
+    padding: 0 !important;
+    display: block;
+    width: 100%;
+}

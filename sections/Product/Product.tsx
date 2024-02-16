@@ -14,10 +14,10 @@ export const Product: FC<Props> = ({ productId, defaultSlug }) => {
       "categoryView=grid",
       "searchView=list",
       `defaultProductId=${productId}`,
-      "defaultSlug=electro-voice-elx-200",
+      `defaultSlug=${defaultSlug}`,
       "id=my-store-83943761"
     );
-  }, [productId]);
+  }, [defaultSlug, productId]);
   return (
     <div id="my-store-83943761"></div>
   );
