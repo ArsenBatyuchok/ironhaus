@@ -23,3 +23,8 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
     width: 100%;
 }
+
+.ec-minicart__counter {
+    top: 5%;
+    left: 56%;
+}
