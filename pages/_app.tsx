@@ -12,7 +12,10 @@ customSections
   })
   .define('product-595854083', {
     component: () => <Product productId="595854083" defaultSlug="electro-voice-zlx-12" />
-  });
+  })
+  .define('product-580854978', {
+    component: () => <Product productId="580854978" defaultSlug="pioneer-cdj-3000" />
+  })
 
 function App({ Component, pageProps }: AppProps) {
   return (
