@@ -28,3 +28,7 @@ h1, h2, h3, h4, h5, h6, p {
     top: 5%;
     left: 56%;
 }
+
+#ecwid_body > [data-ec-widget-loaded="true"] > .ec-minicart {
+    display: none !important;
+}
