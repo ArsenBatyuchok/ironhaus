@@ -2,23 +2,27 @@ import { FC, useEffect } from 'react';
 
 interface Props {
   productId: string;
-  defaultSlug: string;
 }
 
-export const Product: FC<Props> = ({ productId, defaultSlug }) => {
+export const Product: FC<Props> = ({ productId }) => {
   useEffect(() => {
-    if (!window.xProductBrowser) return;
-    window.xProductBrowser(
-      "categoriesPerRow=3",
-      "views=grid(20,3) list(60) table(60)",
-      "categoryView=grid",
-      "searchView=list",
-      `defaultProductId=${productId}`,
-      `defaultSlug=${defaultSlug}`,
-      "id=my-store-83943761"
-    );
-  }, [defaultSlug, productId]);
+    if (!window.xProduct) return;
+    window.xProduct();
+  }, [productId]);
   return (
-    <div id="my-store-83943761"></div>
+  <div
+    className={`ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-${productId}`}
+    itemType="http://schema.org/Product"
+    data-single-product-id={productId}
+  >
+    {/* @ts-ignore */}
+    <div className="ecsp-title" itemProp="name" style={{ display: 'none' }}></div>
+    {/* @ts-ignore */}
+    <div customprop="options"></div>
+    {/* @ts-ignore */}
+    <div customprop="qty"></div>
+    {/* @ts-ignore */}
+    <div customprop="addtobag"></div>
+  </div>
   );
 };

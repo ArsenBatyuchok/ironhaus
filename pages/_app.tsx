@@ -5,17 +5,9 @@ import { Cart } from '../components/Cart/Cart';
 import { Product } from '../sections/Product/Product';
 
 // place your custom items/sections definitions here
-customItems.define('cart', Cart);
-customSections
-  .define('product-596084810', {
-    component: () => <Product productId="596084810" defaultSlug="electro-voice-elx-200" />
-  })
-  .define('product-595854083', {
-    component: () => <Product productId="595854083" defaultSlug="electro-voice-zlx-12" />
-  })
-  .define('product-580854978', {
-    component: () => <Product productId="580854978" defaultSlug="pioneer-cdj-3000" />
-  })
+customItems
+  .define('cart', Cart)
+  .define('product-580854978', () => <Product productId="580854978" />)
 
 function App({ Component, pageProps }: AppProps) {
   return (

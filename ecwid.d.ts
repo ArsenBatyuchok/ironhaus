@@ -4,4 +4,5 @@ interface Window {
   }
   ec: any;
   xProductBrowser: (...params: any) => void;
+  xProduct: () => void;
 }
