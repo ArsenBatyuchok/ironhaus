@@ -8,7 +8,9 @@ export const Product: FC<Props> = ({ productId }) => {
   const [wrapper, setWrapper] = useState<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!wrapper) return;
-    window.xProduct?.();
+    window.setTimeout(() => {
+      window.xProduct?.();
+    }, 200);
   }, [wrapper, productId]);
 
   return (
