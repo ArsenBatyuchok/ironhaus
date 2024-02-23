@@ -10,6 +10,7 @@ export const Product: FC<Props> = ({ productId }) => {
     if (!wrapper) return;
     window.xProduct?.();
   }, [wrapper, productId]);
+
   return (
     <div
       ref={setWrapper}
