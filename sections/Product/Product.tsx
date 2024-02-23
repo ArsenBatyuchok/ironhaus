@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 
 interface Props {
   productId: string;
@@ -6,23 +6,30 @@ interface Props {
 
 export const Product: FC<Props> = ({ productId }) => {
   useEffect(() => {
-    window.xProduct?.();
-  }, [productId]);
+    const script = document.createElement('script');
+    script.src = "https://app.ecwid.com/script.js?83943761&data_platform=singleproduct_v2";
+    script.charset = 'utf-8';
+    script.async = true;
+    script.onload = () => {
+      if (window.xProduct) {
+        window.xProduct();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
-    <div
-      className={`ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-${productId}`}
-      itemType="http://schema.org/Product"
-      data-single-product-id={productId}
-    >
-      {/* @ts-ignore */}
-      <div className="ecsp-title" itemProp="name" style={{ display: 'none' }}></div>
-      {/* @ts-ignore */}
-      <div customprop="options"></div>
-      {/* @ts-ignore */}
-      <div customprop="qty"></div>
-      {/* @ts-ignore */}
-      <div customprop="addtobag"></div>
-    </div>
+    <div dangerouslySetInnerHTML={{ __html: `
+        <div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-${productId}" itemtype="http://schema.org/Product" data-single-product-id="${productId}">
+          <div class="ecsp-title" itemprop="name" style="display:none;"></div>
+          <div customprop="options"></div>
+          <div customprop="qty"></div>
+          <div customprop="addtobag"></div>
+        </div>` }}
+    />
   );
 };

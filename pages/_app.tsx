@@ -1,6 +1,6 @@
 import '../styles/reset.css';
 import type { AppProps } from 'next/app';
-import { CntrlProvider, customItems, customSections } from '@cntrl-site/sdk-nextjs';
+import { CntrlProvider, customItems } from '@cntrl-site/sdk-nextjs';
 import { Cart } from '../components/Cart/Cart';
 import { Product } from '../sections/Product/Product';
 
