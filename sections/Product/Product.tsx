@@ -5,17 +5,12 @@ interface Props {
 }
 
 export const Product: FC<Props> = ({ productId }) => {
-  const [wrapper, setWrapper] = useState<HTMLDivElement | null>(null);
   useEffect(() => {
-    if (!wrapper) return;
-    window.setTimeout(() => {
-      window.xProduct?.();
-    }, 200);
-  }, [wrapper, productId]);
+    window.xProduct?.();
+  }, [productId]);
 
   return (
     <div
-      ref={setWrapper}
       className={`ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-${productId}`}
       itemType="http://schema.org/Product"
       data-single-product-id={productId}
