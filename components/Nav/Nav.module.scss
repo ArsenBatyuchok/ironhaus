@@ -1,0 +1,114 @@
+@import 'styles/cntrl';
+@import 'styles/variables';
+
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 99999998;
+  width: 100%;
+}
+
+.logoWrapper {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  @include for('Desktop') {
+    width: size(80);
+    height: size(35);
+    top: size(14);
+    left: size(18);
+  }
+  @include for('Mobile') {
+    width: size(70);
+    height: size(31);
+    top: size(16);
+    left: size(20);
+  }
+}
+
+.logoWrapperVisible {
+  visibility: visible;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.navItems {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  @include for('Mobile') {
+    width: 100%;
+    justify-content: center;
+    gap: size(0);
+  }
+}
+
+.navItemsActive {
+  visibility: visible;
+  background-color: $BRAND_BLUE;
+  height: 100vh;
+  @include for('Mobile') {
+    position: absolute;
+  }
+}
+
+.linkWrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  @include for('Mobile') {
+    text-align: center;
+  }
+}
+
+.linkWrapperVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.link {
+  display: inline-block;
+  font-family: $FONT_SANS;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.15s ease;
+  -webkit-font-smoothing: antialiased;
+  @include for('Mobile') {
+    font-size: size(22);
+    line-height: size(28);
+  }
+}
+
+.linkX {
+  display: inline-block;
+  font-family: Courier New, serif;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color 0.15s ease;
+  @include for('Mobile') {
+    font-size: size(38);
+    line-height: size(32);
+    margin-bottom: size(80);
+  }
+}
+
+.ironhaus {
+  @include for('Mobile') {
+    margin-bottom: size(32);
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  @include for('Mobile') {
+    margin-top: size(30);
+    padding-bottom: size(100);
+  }
+}

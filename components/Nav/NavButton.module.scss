@@ -1,0 +1,15 @@
+@import 'styles/cntrl';
+
+.navButton {
+  border: none;
+  background: transparent;
+  outline: none;
+  position: absolute;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
