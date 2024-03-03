@@ -13,6 +13,13 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
+.fixed {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
 .ec-minicart__icon {
     width: 100% !important;
     height: auto !important;

@@ -104,7 +104,7 @@ export const Nav: FC = () => {
             {LINKS.map((link, i) => (
               <div
                 key={link.href}
-                style={{ transitionDelay: isActive ? `${(i + 1) * 0.15}s` : '0s' }}
+                style={{ transitionDelay: isActive ? `${(i + 1) * 0.2}s` : '0s' }}
                 className={cn(styles.linkWrapper, {
                   [styles.linkWrapperVisible]: isActive
                 })}
@@ -121,7 +121,7 @@ export const Nav: FC = () => {
               {SOCIAL.map((link, i) => (
                 <div
                   key={link.href}
-                  style={{ transitionDelay: isActive ? `${(i + 4) * 0.15}s` : '0s' }}
+                  style={{ transitionDelay: isActive ? `${(i + 7) * 0.2}s` : '0s' }}
                   className={cn(styles.linkWrapper, {
                     [styles.linkWrapperVisible]: isActive
                   })}
